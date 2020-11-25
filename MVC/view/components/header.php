@@ -15,6 +15,8 @@
         ?>
          <a href="http://localhost/WEB/?c=AccountController&m=logout" > logout</a>
                 <?php
+                }else {
+                    echo "da logout";
                 } 
             }?>
     </body>

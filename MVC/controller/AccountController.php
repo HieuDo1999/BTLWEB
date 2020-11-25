@@ -35,7 +35,8 @@
             $user=$this->is_logged();
             if($user){
             $this->set_logout();
-            $this->view('login',$user);
+          
+            $this->view('login');
             }
         }
         public function index(){

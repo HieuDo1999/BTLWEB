@@ -9,13 +9,33 @@ class AdminController extends framework {
         $dataCustomer=$customer->getListCustomer();
         $this->view('customer/index',$dataCustomer);
     }
-    public function editCustomer(){
+    public function editCustomer(){//thieu
         include_once ('./MVC/model/CustomerModel.php');
+        $data=[
+            'username'=>$this->input('username'),
+            'password'=>$this->input('password'),
+            'email'=>$this->input('email'),
+            'sex'=>$this->input('sex'),
+            'phone'=>$this->input('phone'),
+            'address'=>$this->input('address'),
+        ];
         $customer=new CustomerModel();
-        $name=$_GET['p'];
-        echo $name;
+        
+        $this->view('customer/edit');
+
+    }
+    public function viewCustomer(){//thieu
+        include_once ('./MVC/model/CustomerModel.php');
+        $username=$_GET['p'];
+        echo $username;
+        $customer=new CustomerModel();
+        $data=$customer->viewCustomer($username);
+        $this->view('customer/view',$data);
+
+
         
     }
+
 
 }
 
