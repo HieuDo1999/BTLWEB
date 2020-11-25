@@ -1,3 +1,4 @@
+<?php if(!isset($_SESSION['ss_user_token'])) die ("not found file"); ?>
 <!DOCTYPE html>
 <html>
     <head>

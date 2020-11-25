@@ -1,5 +1,5 @@
 <?php 
-    if(!defined('in_site')) die('not found');
+    if(!isset($_SESSION['ss_user_token'])) die ("not found file");
 ?> 
 <h1>this is index of customer</h1>
 <?php 
@@ -8,7 +8,7 @@
    
 ?>
 <h1>Danh sach cus</h1>
-<a href="http://localhost/WEB/?c=AdminController&m=addCustomer">add customer</a>
+<a href="http://localhost/WEB/?c=AdminController&m=viewFormAddCustomer">add customer</a>
 
 <table id="cus" class="table table-striped table-bordered" style="width:100%" border="1">
         <thead>
@@ -36,13 +36,12 @@
           <td><?php echo $customer['sex']; ?></td>
           <td><?php echo $customer['phone']; ?></td>
           <td><?php echo $customer['address']; ?></td>  
+
           <td><a name="name" href="http://localhost/WEB/?c=AdminController&m=viewCustomer&p=<?php echo $customer['username']; ?>" value="<?php echo $customer['name'] ;?>" >view customer</a></td>
-          <td><a href="http://localhost/WEB/?c=AdminController&m=deleteCustomer">delelte</a></td>
+          <td><a href="http://localhost/WEB/?c=AdminController&m=deleteCustomer&p=<?php echo $customer['username'];?>">delelte</a></td>
       </tr>
       
-     
-           
-        
+    
 
 <?php endforeach;?>
 

@@ -1,5 +1,5 @@
 <?php 
-    if(!defined('in_site')) die('not found');
+    if(!isset($_SESSION['ss_user_token'])) die ("not found file");
 ?> 
 <h1>edit of customer</h1>
 <table id="cus" class="table table-striped table-bordered" style="width:100%" border="1">

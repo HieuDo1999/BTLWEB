@@ -1,5 +1,5 @@
 <?php 
-    if(!defined('in_site')) die('not found');
+    
     include_once ('./MVC/helper/database.php');
     class AccountModel extends database {
         public function checkCustomer($username, $password){

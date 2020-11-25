@@ -1,5 +1,5 @@
 <?php 
-    if(!defined('in_site')) die('not found');
+    // if(!isset($_SESSION['ss_user_token'])) die ("not found file");
     class rout {
         private $controller='AccountController';
         private $method='login';
