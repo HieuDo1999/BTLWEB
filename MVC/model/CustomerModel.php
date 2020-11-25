@@ -9,10 +9,22 @@
             $res=$this->db_get_list($sql);
             return( $res);
         }
-        public function editCustomer(){//thieu
+        public function editCustomer($datas){//thieu
             $this->connectDB();
             global $conn;
-            $sql="update db_customer set ";  
+            foreach($datas as $data ): // convet array to string
+            $sql=" UPDATE db_customer set password='$data ['password']' ,
+                                         name='$data ['name']' ,
+                                         email='$data ['email']' ,
+                                         sex='$data ['sex']' ,
+                                         phone='$data ['phone']' ,
+                                         address=$data ['address']
+                                         where username='$data ['username]';
+                                                                ";
+            $res=$this->excuteDB($sql);                                                   
+            print_r($data);                    
+            endforeach;
+            return $res;
         }
         public function viewCustomer($username){
             $this->connectDB();
