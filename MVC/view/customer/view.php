@@ -1,5 +1,6 @@
 <?php 
     if(!isset($_SESSION['ss_user_token'])) die ("not found file");
+    include_once ('./MVC/view/components/header.php');
 ?> 
 <h1>view customer</h1>
 
@@ -20,7 +21,7 @@
       <?php if(!empty($data)): ?>  
     
       <?php foreach($data as $customer):  ?>   
-        <form action="http://localhost/WEB/?c=AdminController&m=editCustomer&p=<?php echo $customer['username']; ?>" method="POST">
+        <form action="http://localhost/WEB/?c=CustomerController&m=editCustomer&p=<?php echo $customer['username']; ?>" method="POST">
         <tr> 
           <td><input name="username" value="<?php echo $customer['username']; ?>"></input></td>
           <td><input name="password" value="<?php echo $customer['password']; ?>"></input></td>
@@ -30,7 +31,7 @@
           <td><input name="phone" value="<?php echo $customer['phone']; ?>"></input></td>
           <td><input name="address" value="<?php echo $customer['address']; ?>"></input></td>  
           <td><button class="btn btn-primary" type="submit" >update customer</button></td>
-          <td><a href="http://localhost/WEB/?c=AdminController&m=deleteCustomer&p=<?php echo $customer['username']; ?>">delelte</a></td>
+          <td><a href="http://localhost/WEB/?c=CustomerController&m=deleteCustomer&p=<?php echo $customer['username']; ?>">delelte</a></td>
       </tr>
       </form> 
       <?php endforeach;?>

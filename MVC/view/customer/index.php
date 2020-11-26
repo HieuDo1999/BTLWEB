@@ -1,14 +1,15 @@
 <?php 
     if(!isset($_SESSION['ss_user_token'])) die ("not found file");
+    include_once ('./MVC/view/components/header.php');
 ?> 
 <h1>this is index of customer</h1>
 <?php 
  
-    include_once ('./MVC/controller/AdminController.php');
+    include_once ('./MVC/controller//CustomerController.php');
    
 ?>
 <h1>Danh sach cus</h1>
-<a href="http://localhost/WEB/?c=AdminController&m=viewFormAddCustomer">add customer</a>
+<a href="http://localhost/WEB/?c=CustomerController&m=viewFormAddCustomer">add customer</a>
 
 <table id="cus" class="table table-striped table-bordered" style="width:100%" border="1">
         <thead>
@@ -24,7 +25,8 @@
             </tr>
         </thead>
         <tbody>
-      <?php if(!empty($data)): ?>
+
+      <?php if(!empty($data)):  ?>
         
       <?php foreach($data as $customer):  ?>
         
@@ -37,8 +39,8 @@
           <td><?php echo $customer['phone']; ?></td>
           <td><?php echo $customer['address']; ?></td>  
 
-          <td><a name="name" href="http://localhost/WEB/?c=AdminController&m=viewCustomer&p=<?php echo $customer['username']; ?>" value="<?php echo $customer['name'] ;?>" >view customer</a></td>
-          <td><a href="http://localhost/WEB/?c=AdminController&m=deleteCustomer&p=<?php echo $customer['username'];?>">delelte</a></td>
+          <td><a name="name" href="http://localhost/WEB/?c=CustomerController&m=viewCustomer&p=<?php echo $customer['username']; ?>" value="<?php echo $customer['name'] ;?>" >view customer</a></td>
+          <td><a href="http://localhost/WEB/?c=CustomerController&m=deleteCustomer&p=<?php echo $customer['username'];?>">delelte</a></td>
       </tr>
       
     

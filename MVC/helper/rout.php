@@ -2,7 +2,7 @@
     // if(!isset($_SESSION['ss_user_token'])) die ("not found file");
     class rout {
         private $controller='AccountController';
-        private $method='login';
+        private $method='homeClient';
         private $parameters = [];
         public function __construct(){
             $c=isset($_GET['c'])? $_GET['c']:'';

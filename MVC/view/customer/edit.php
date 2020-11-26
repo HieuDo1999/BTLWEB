@@ -1,5 +1,6 @@
 <?php 
     if(!isset($_SESSION['ss_user_token'])) die ("not found file");
+    include_once ('./MVC/view/components/header.php');
 ?> 
 <h1>edit of customer</h1>
 <table id="cus" class="table table-striped table-bordered" style="width:100%" border="1">
@@ -25,8 +26,8 @@
           <td><?php echo $customer['sex']; ?></td>
           <td><?php echo $customer['phone']; ?></td>
           <td><?php echo $customer['address']; ?></td>  
-          <td><a name="name" href="http://localhost/WEB/?c=AdminController&m=editCustomer&p=<?php echo $customer['username']; ?>" value="<?php echo $customer['name'] ;?>" >edit customer</a></td>
-          <td><a href="http://localhost/WEB/?c=AdminController&m=deleteCustomer">delelte</a></td>
+          <td><a name="name" href="http://localhost/WEB/?c=CustomerController&m=editCustomer&p=<?php echo $customer['username']; ?>" value="<?php echo $customer['name'] ;?>" >edit customer</a></td>
+          <td><a href="http://localhost/WEB/?c=CustomerController&m=deleteCustomer">delelte</a></td>
       </tr>
 
 <?php endif; ?> 

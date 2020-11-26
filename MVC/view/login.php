@@ -1,6 +1,6 @@
     
-<h2>User Login</h2>
-    <form action="?c=AccountController&m=checkCustomer" method="POST">
+<h2>Login</h2>
+    <form action="?c=AccountController&m=checkLogin" method="POST">
     <div class="form-group">
     <input type="text" name="username" class="form-control"  value="">
     <div class="error">

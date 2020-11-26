@@ -1,5 +1,6 @@
 <?php 
     if(!isset($_SESSION['ss_user_token'])) die ("not found file");
+    include_once ('./MVC/view/components/header.php');
 ?> 
 
 <h1>add</h1>
@@ -18,7 +19,7 @@
         </thead>
         <tbody>
      
-        <form method="POST" action="http://localhost/WEB/?c=AdminController&m=addCustomer" >
+        <form method="POST" action="http://localhost/WEB/?c=CustomerController&m=addCustomer" >
       <tr> 
           <td><input name="username"  ></input></td>
           <td><input name="password" ></input></td>

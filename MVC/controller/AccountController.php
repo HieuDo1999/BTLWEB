@@ -5,7 +5,11 @@
         public function login(){
             $this->view('login');
         }
-        public function checkCustomer(){
+        public function homeClient(){
+            $this->view('client/home');
+        }
+
+        public function checkLogin(){
 
             $data=[
             'username' => $this->input('username'),
@@ -13,16 +17,22 @@
             ];
             
             include ('./MVC/model/AccountModel.php');
-            $cus=new AccountModel();
-            $res=$cus->checkCustomer($data['username'],$data['password']);
+            $Acc=new AccountModel();
+            $checkCus=$Acc->checkCustomer($data['username'],$data['password']);
+            $checkAd=$Acc->checkAdmin($data['username'],$data['password']);
 
-            if($res){
-                    $this->set_logged($data['username']);
+            if($checkAd){
+                $this->set_logged($data['username']);
                 $data['username']=$this->get_username();
-                $this->view('home_admin',$data);
+                $this->view('admin/home',$data);
                 
             }
-            else {
+            else if($checkCus)
+            {
+                $this->set_logged($data['username']);
+                $data['username']=$this->get_username();
+                $this->view('customer/index',$data);
+            }else{
                 
                 $this->view('login');
                 echo "that bai";
@@ -30,6 +40,11 @@
             }
            
         }
+        public function loginCustomer (){
+            $this->view('login');
+        }
+
+
         public function logout(){
             $user=$this->is_logged();
             if($user){
@@ -38,9 +53,10 @@
             $this->view('login');
             }
         }
-        public function index(){
-            echo"index";
-        }
+       
+      
+
+
     }
 
 ?>
