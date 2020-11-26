@@ -1,3 +1,4 @@
+<?php if(!isset($_SESSION['ss_user_token'])) die ("not found file"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./MVC/public/style.css">
     </head>
     <body>
+<<<<<<< HEAD
         <div class="logoheader">
             <div><img id="logo" src="./MVC/public/image/logo.png"></div>
             <div id="logoheader"><h2>Mua sắp online</h2></div>
@@ -40,5 +42,22 @@
             </div>
         </header>
         
+=======
+        <?php   
+
+                $user=isset($_SESSION['ss_user_token'])?$_SESSION['ss_user_token']:'';
+                if($user!=''){
+                if($user['username']!=''){
+                    echo $data['username']; 
+                    print_r($data);
+
+        ?>
+         <a href="http://localhost/WEB/?c=AccountController&m=logout" > logout</a>
+                <?php
+                }else {
+                    echo "da logout";
+                } 
+            }?>
+>>>>>>> 0f20836ec3f9a21d556356256094586cb8cb1a96
     </body>
 </html>

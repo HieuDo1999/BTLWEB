@@ -1,6 +1,5 @@
 <?php 
 
-if(!defined('in_site')) die('not found');
     class framework{
 
         public function view($viewPath,$data=[]){

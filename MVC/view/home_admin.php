@@ -1,3 +1,4 @@
+<?php if(!isset($_SESSION['ss_user_token'])) die ("not found file"); ?>
 <h1>home_ admin</h1>
 <h1>Hello <?php
 

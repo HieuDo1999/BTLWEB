@@ -1,4 +1,5 @@
 <?php
+
 if(!defined('in_site')) die('not found');
     class database {
        public $conn;
