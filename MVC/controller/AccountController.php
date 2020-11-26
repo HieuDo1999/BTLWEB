@@ -1,4 +1,4 @@
-<h1>AccountController</h1>
+<!-- <h1>AccountController</h1> -->
 <?php 
     if(!defined('in_site')) die('not found');
     include_once ('./MVC/helper/framework.php');
