@@ -4,7 +4,7 @@
     <head>
         <title>Shoping</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./MVC/public/style.css">
+        <link rel="stylesheet" type="text/css" href="./MVC/public/css/style.css">
     </head>
     <body>
 
