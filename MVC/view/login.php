@@ -1,4 +1,4 @@
-    
+<?php include_once ("./MVC/view/components/header.php");  ?>
 <h2>User Login</h2>
     <form action="?c=AccountController&m=checkCustomer" method="POST">
     <div class="form-group">
