@@ -1,4 +1,4 @@
-<h1>AccountController</h1>
+
 <?php 
     include_once ('./MVC/helper/framework.php');
     class AccountController extends framework{
