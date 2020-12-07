@@ -1,5 +1,4 @@
 <?php 
-    if(!isset($_SESSION['ss_user_token'])) die ("not found file");
     include_once ('./MVC/view/components/header.php');
 ?> 
 <h1>this is index of product</h1>

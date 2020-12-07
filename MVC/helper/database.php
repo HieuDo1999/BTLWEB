@@ -1,6 +1,5 @@
 <?php
 
-if(!defined('in_site')) die('not found');
     class database {
        public $conn;
        public function connectDB(){
@@ -31,7 +30,18 @@ if(!defined('in_site')) die('not found');
         return $data;
     }
 
-       
+       //validate trong sql
+       public function validateSql($sql){
+        $sql=preg_replace("/[^A-Za-z0-9=_*',$ ]/",'',$sql);
+        $search=['<?php','<script>','#'];
+        $sql=str_replace($search,'',$sql);
+        return $sql;
+    }
+    public function validateId($sql){
+        $sql=preg_replace("/[^A-Za-z0-9]/",'',$sql);
+        return $sql;
+    }
+
 
 
 

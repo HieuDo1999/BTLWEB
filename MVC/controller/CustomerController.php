@@ -1,7 +1,5 @@
 <h1>CustomerController</h1>
 <?php 
-
-if(!isset($_SESSION['ss_user_token'])) die ("not found file");
  include_once ('./MVC/helper/framework.php');
 class CustomerController extends framework {
     public function getListCustomer(){

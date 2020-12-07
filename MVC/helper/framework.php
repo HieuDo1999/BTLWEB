@@ -51,9 +51,10 @@
           public function session_set($key,$value){
               $_SESSION[$key]=$value;
           }
-          public function set_logged($username){
+          public function set_logged($username,$level){
             $this->session_set('ss_user_token',array(
-                'username' => $username
+                'username' => $username,
+                'level'=> $level
             ));
             
           }
@@ -67,6 +68,12 @@
               $user=$this->is_logged();
               return isset($user['username'])?$user['username']:'';
           }
+          public function get_level(){
+            $user=$this->is_logged();
+            return isset($user['level'])?$user['level']:'';
+        }
+
+        
 
 
 

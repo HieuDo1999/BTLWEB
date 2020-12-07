@@ -1,11 +1,11 @@
 <?php 
-    // if(!isset($_SESSION['ss_user_token'])) die ("not found file");
     class rout {
         private $controller='AccountController';
         private $method='homeClient';
         private $parameters = [];
         public function __construct(){
             $c=isset($_GET['c'])? $_GET['c']:'';
+            // $c=utf8_encode()
             $m=isset($_GET['m'])? $_GET['m']:'';
             $p=isset($_GET['p'])? $_GET['p']:[];
             if(file_exists(BASE_URL.'/MVC/controller/'.$c.'.php')){
@@ -34,6 +34,7 @@
             $url = explode("/", $url);
             return $url;
         }
+
     }
 }
 

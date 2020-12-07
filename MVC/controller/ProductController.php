@@ -1,7 +1,5 @@
 <h1>ProductController</h1>
 <?php 
-
-if(!isset($_SESSION['ss_user_token'])) die ("not found file");
  include_once ('./MVC/helper/framework.php');
 class ProductController extends framework {
     public function getListProduct(){
@@ -12,6 +10,7 @@ class ProductController extends framework {
         $this->view('Product/index',$dataProduct);
     }
     public function editProduct(){
+        if(isset($_SESSION['ss_user_token']) && $_SESSION['level']==2 ) {
         include_once ('./MVC/model/ProductModel.php');
         $data=[
             'id'=> $this->input('id'),
@@ -30,6 +29,9 @@ class ProductController extends framework {
         else {
             echo 'update fail';
         }
+    }
+    else die("not found!");
+
        
     }
     public function viewProduct(){
@@ -41,6 +43,7 @@ class ProductController extends framework {
         $this->view('Product/view',$data);     
     }
     public function deleteProduct(){
+        if(isset($_SESSION['ss_user_token']) && $_SESSION['level']==2 ) {
         $productId=$_GET['p'];
         echo $productId;
         include_once ('./MVC/model/ProductModel.php');
@@ -50,11 +53,13 @@ class ProductController extends framework {
         $this->getListProduct();
         }
         else echo "delete fail";
+      }
     }
     public function viewFormAddProduct(){
         $this->view('Product/add');
     }
     public function addProduct(){
+        if(isset($_SESSION['ss_user_token']) && $_SESSION['level']==2 ) {
         $data=[
             'id'=> $this->input('id'),
             'name'=>$this->input('name'),
@@ -73,6 +78,7 @@ class ProductController extends framework {
         else echo "add fail";
         //
 
+        }
     }
 
 }
