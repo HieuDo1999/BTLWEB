@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ViewCustomer</title>
+	<title>DeleteProduct</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../../public/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../public/fontawesome/css/all.css">
@@ -9,41 +9,41 @@
 </head>
 <body>
 	<?php include '../components/header_admin.php'; ?>
-	<div class="content">
-			<div><h1>Danh Sách Khách Hàng</h1></div>
+	<div class="detailorder" >
+		<div><h1>Thông tin đơn hàng</h1></div>
+		<div>
 			<table class="table">
 			    <thead>
 			      	<tr>
 				        <th>Mã Số</th>
 				        <th>Tên Khách hàng</th>
+				        <th>Sản Phẩm</th>
 				        <th>Điện Thoại</th>
-				        <th>Địa Chỉ</th>
-				        <th>Mật Khẩu</th>
-				        
-				        <th>Xóa</th>
+				        <th>Địa Chỉ </th>
+				        <th>Thành Tiền</th>
+				        <th>Trạng Thái</th>
 			      	</tr>
 			    </thead>
 			    <tbody>
 			    <tr>
-			    	<td>1</td>
+			    	<td>0131</td>
 			    	<td>Hieu Do</td>
+			    	<td>Banh kem dâu</td>
 			    	<td>0904533354</td>
 			    	<td>322 le trong tan , dinh cong hoang mai hanoi</td>
-			    	<td><span>fgdfhj34kjdj</span></td>
-			    	<td><a href=""><i class="fas fa-trash"></i></a></td>
+			    	<td>320.000 vnd</td>
+			    	<td>
+			    		<div >
+			    			<select id="stage">
+			    				<option>Chap nhan</option>
+			    				<option>Huy</option>
+			    				<option>Cho Xac nhan</option>
+			    			</select>
+			    		</div>
+			    	</td>
 			    </tr>
-			    <tr>
-			    	<td>1</td>
-			    	<td>Hieu Do</td>
-			    	<td>0904533354</td>
-			    	<td>322 le trong tan , dinh cong hoang mai hanoi</td>
-			    	<td><span>SDgUS23</span></td>
-			    	<td><div><a href=""><i class="fas fa-trash"></i></a></div></td>
-			    </tr>	
-					
-			    </tbody>
-			</table>
 		</div>
+	</div>
 
 </body>
 </html>

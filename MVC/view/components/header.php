@@ -2,7 +2,7 @@
 <div class="header">
     <div class="logoheader">
         <div id="img"><img id="logo" src="../../public/image/logobanh.png"></div>
-        <div id="logoheader">Chức Đào Cake </div>
+        <div id="logoheader">Chức Đào Bakery </div>
     </div>
     <header>
         <div class="menu_header">
