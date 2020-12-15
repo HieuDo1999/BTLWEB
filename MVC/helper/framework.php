@@ -68,10 +68,18 @@
               $user=$this->is_logged();
               return isset($user['username'])?$user['username']:'';
           }
+          public function get_customername(){
+              include_once ("./MVC/model/CustomerModel.php");
+              $user=$this->get_username();
+              $customer=new CustomerModel();
+              return $customer->getCustomerName($user);
+          }
           public function get_level(){
             $user=$this->is_logged();
             return isset($user['level'])?$user['level']:'';
         }
+
+            
 
         
 

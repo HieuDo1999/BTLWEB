@@ -36,7 +36,7 @@
             $this->connectDB();
             global $conn;
             $id=$this->validateId($id);
-            $sql="select * from db_Product where id='$id'";
+            $sql="select * from db_product where id='$id'";
             $sql=$this->validateSql($sql);
             $res=$this->db_get_list($sql);
             return $res;  
@@ -59,11 +59,13 @@
             $CategoryId=$this->validateId($data['category_id']);
             $Quantity=$this->validateId($data['quantity']);
             $img=$this->validateId($data['img']);
+            // $active=$this->validateId($data['active']);
             global $conn;
             $sql="insert into db_Product (id,name,price,category_id,quantity,img) 
             values('$ProductId','$ProductName','$ProductPrice','$CategoryId','$Quantity','$img');";
             $sql=$this->validateSql($sql);
             $res=$this->excuteDB($sql);
+            echo $sql;
             return $res;
 
         }

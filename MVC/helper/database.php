@@ -32,7 +32,7 @@
 
        //validate trong sql
        public function validateSql($sql){
-        $sql=preg_replace("/[^A-Za-z0-9=_*',$ ]/",'',$sql);
+        $sql=preg_replace("/[^A-Za-z0-9=_*',$ ) ( ]/",'',$sql);
         $search=['<?php','<script>','#'];
         $sql=str_replace($search,'',$sql);
         return $sql;
