@@ -32,10 +32,7 @@
 					</select>
 					</div>
 				</div>
-				<div>
-					<div><span>Số Lượng</span></div>
-					<div><input type="number" name="" min="0" max="1000" value="38" ></div>
-				</div>
+				
 				<div>
 					<div><span>Đơn Giá</span></div>
 					<div><input type="text" name="" value="300.000 vnd"></div>

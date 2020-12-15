@@ -30,15 +30,15 @@
 			    	<td>Hieu Do</td>
 			    	<td>0904533354</td>
 			    	<td>322 le trong tan , dinh cong hoang mai hanoi</td>
-			    	<td><span>Chấp nhận</span></td>
-			    	<td><a href=""><i class="fas fa-edit"></i></a></td>
+			    	<td><span>Cho </span></td>
+			    	<td><a href="http://localhost/BTLWEB/MVC/view/admin/orderDetail.php"><i class="fas fa-edit"></i></a></td>
 			    </tr>
 			    <tr>
 			    	<td>1</td>
 			    	<td>Hieu Do</td>
 			    	<td>0904533354</td>
 			    	<td>322 le trong tan , dinh cong hoang mai hanoi</td>
-			    	<td><span>Chấp nhận</span></td>
+			    	<td><span>Stage</span></td>
 			    	<td><a href="http://localhost/BTLWEB/MVC/view/admin/orderDetail.php"><i class="fas fa-edit"></i></a></td>
 			    </tr>	
 					
