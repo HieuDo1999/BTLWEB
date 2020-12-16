@@ -5,15 +5,15 @@
 <head>
   <title>Chức Đào Cakes</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./../../public/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <?php 
-   include ("../components/header.php");
+   include_once ("./MVC/view/components/header.php");
   ?>
   <div><img id="img_head" src="../../public/image/anhnen.jpg"></div>
-   <?php include ("../components/sidebar.php") ?>
+   <?php include_once ("./MVC/view/components/sidebar.php") ?>
   <div>
 
     <div class="wrapper">
@@ -66,7 +66,7 @@
       </div>
     </div> 
   <div> 
-    <?php include ("../components/footer.php"); ?>
+    <?php include ("./MVC/view/components/footer.php"); ?>
   </div> 
   
 </body>

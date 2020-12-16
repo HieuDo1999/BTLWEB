@@ -1,7 +1,7 @@
 <?php 
     class rout {
         private $controller='AccountController';
-        private $method='homeClient';
+        private $method='home';
         private $parameters = [];
         public function __construct(){
             $c=isset($_GET['c'])? $_GET['c']:'';

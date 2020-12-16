@@ -7,8 +7,8 @@
             $this->view('login');
         }
         //view home client
-        public function homeClient(){
-            $this->view('client/home');
+        public function home(){
+            $this->view('customer/index');
         }
         //check login is admin or customer
         public function checkLogin(){
