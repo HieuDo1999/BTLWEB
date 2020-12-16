@@ -28,7 +28,7 @@
                     <div id="re_lo"><span><a href="#">Đăng Xuất</a></span></div>
             <?php endif ?> 
             <div >
-               <div class="cart"><a href="http://localhost/WEB/MVC/view/customer/cartDetail.php">
+               <div class="cart"><a href="http://localhost/BTLWEB/MVC/view/customer/cartDetail.php">
                    <i class="fas fa-shopping-cart "></i>
                </a></div>
             </div> 
@@ -42,7 +42,7 @@
             <form action="" method="POST">
                  <input id="text_search" type="text" name="textsearch">
                 <input id="submit_search" type="submit" name="" value="search">
-                <a href="http://localhost/WEB/MVC/view/customer/cart.php"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                
             </form> 
            
         </div>           
