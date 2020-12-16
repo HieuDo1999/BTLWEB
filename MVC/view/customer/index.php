@@ -10,10 +10,10 @@
 </head>
 <body>
   <?php 
-   include_once ("./MVC/view/components/header.php");
+   include ("../components/header.php");
   ?>
   <div><img id="img_head" src="../../public/image/anhnen.jpg"></div>
-   <?php include_once ("./MVC/view/components/sidebar.php") ?>
+   <?php include ("../components/sidebar.php") ?>
   <div>
 
     <div class="wrapper">
@@ -66,7 +66,7 @@
       </div>
     </div> 
   <div> 
-    <?php include ("./MVC/view/components/footer.php"); ?>
+    <?php include ("../components/footer.php"); ?>
   </div> 
   
 </body>
