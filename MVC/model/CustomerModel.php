@@ -10,8 +10,7 @@
             return( $res);
         }
         public function editCustomer($data){//thieu
-            $this->connectDB();
-            global $conn;
+           
             $username=$this->validateId($data['username']);
             $password=$this->validateId($data['password']);
             $name=$this->validateId($data['name']);
@@ -42,6 +41,15 @@
             $res=$this->db_get_list($sql);
             return $res;  
         }
+        public function getCustomerName($username){
+            $this->connectDB();
+            global $conn;
+            $username=$this->validateId($username);
+            $sql=$this->validateSql("select name from db_customer where username='$username'");
+            $res=$this->excuteDB($sql);
+            return $res;  
+        }
+
         public function deleteCustomer($username){
             $this->connectDB();
             global $conn;

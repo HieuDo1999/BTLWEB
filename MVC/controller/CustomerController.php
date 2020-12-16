@@ -1,6 +1,8 @@
 <h1>CustomerController</h1>
 <?php 
  include_once ('./MVC/helper/framework.php');
+ $is_logged=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token'] :"";
+if(!$is_logged||$is_logged['level']!=2) die ("not found file");
 class CustomerController extends framework {
     public function getListCustomer(){
         include_once ('./MVC/model/CustomerModel.php');

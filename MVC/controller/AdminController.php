@@ -1,7 +1,7 @@
 <h1>AdminController</h1>
 <?php 
-
-if(!isset($_SESSION['ss_user_token'])) die ("not found file");
+$is_logged=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token'] :"";
+if(!$is_logged||$is_logged['level']!=2) die ("not found file");
  include_once ('./MVC/helper/framework.php');
 class AdminController extends framework {
     public function viewHomeAdmin(){
