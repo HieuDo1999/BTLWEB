@@ -4,7 +4,7 @@
 	/*font-family: cursive;*/
 }
 .wrapper {
-	display: inline-flex;
+	
 	padding: 1px;
 	width: 85%;
 	margin-bottom: 2%;
@@ -19,7 +19,7 @@
 	width: 100%;
 	height: auto;
 	background: #57D7F1;
-	border: 2px solid #7DD828;
+	
 }
 
 ul {
@@ -36,7 +36,7 @@ ul {
 	display:inline-flex;
 	background:#57D7F1 ;
 	padding: 5px;
-	border: 1px solid gray;
+	
 
 }
 .list_header{
@@ -66,17 +66,34 @@ a{
 .header{
 	width: 100%;
 	height: auto;
-	border: 2px solid #7DD828;
+
+	/*border: 2px solid #7DD828;*/
 	/*position: fixed;*/
 }
 .search{
-	width: auto;
-	padding-left: 10%;
+	width: 70%;
+	display: inline-flex;
 	margin: auto;
-	background: #57D7F1;
-	display:inline-flex;
 	
+}
+.search  input{
+	
+	margin: auto;
+	margin-right: 1px;
+}
+#text_search{
+	width:60%;
+	margin-right: 1px;
+}
 
+#submit_search{
+	width: 10%;
+	margin:0;
+}
+.cart  i{
+	width: 100%;
+	padding: 4px;
+	margin: auto;	
 }
 
 .logoheader{
@@ -84,22 +101,23 @@ a{
 	float: left;
 	width: 100%;
 	margin: auto;
-	border: 2px solid #7DD828;
-	background: #FCC2F9;
+	
 }
 .logoheader #img{
 	width: 13%;
 	height: auto;
-	background: #FCC2F9;
+	
 }
 #logoheader{
 	width: 30%;
 	height: auto;
 	color: #7DD828;
 	margin: auto;
-	font-size: 45px;
+	margin-left: 0;
+	margin-right: 0;
+	font-size: 35px;
 	font-weight: bold;
-	font-family: cursive;
+	
 	display: inline-flex;
 }
 
@@ -109,6 +127,15 @@ a{
 	width: 100%;
 	height:100%; 
 
+}
+#img_head{
+	width: 100%;
+	height: 50%;
+}
+#index_title{
+	width: 100%;
+	background: green;
+	
 }
 #product{
 	margin: 20px;
@@ -260,10 +287,12 @@ a{
 }
 #submit{
 	margin: auto;
-	width: 15%;
-	height: 10%;
+	margin-bottom: 3%;
+	width: 20%;
+	height: auto;
 	background: #3D8724;
-	border-radius: 6px ;
+	border-radius: 4px ;
+
 }
 .carthead li{
 	border: 1px solid gray;
@@ -274,15 +303,17 @@ a{
 .table thead th {
     vertical-align: bottom;
     background: #86C5F8;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid black;
 }
 
 .table{
-    border: 2px solid #dee2e6;
+	width: 100%;
+    border: 2px solid black;
 }
 .list_item td{
 	border: 2px solid #ECEEEE;
 }
+
 .list_item img{
 	float: left;
 	width: 15%;
@@ -296,3 +327,76 @@ a{
 .CartDetail{
 	margin: auto;
 }
+#admin_head{
+	display: inline-flex;
+	width: 100%;
+}
+
+.head_body li{
+
+	display: inline-flex;
+	padding: 3px;
+	border: 2px solid black;
+}
+#head_ul{
+	margin: auto;
+}
+
+#ad_log{
+	display: inline-flex;
+	margin: auto;
+	margin-right: 4%;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+ table,th,td{
+ 	border: 1px solid black;
+ 	margin: auto;
+ }
+ .content_update{
+ 	margin: auto;
+ 	border: 2px solid black;
+ 	width: 60%;
+ }
+ #headupdate{
+ 	background:#58F047;
+ 	padding: 0;
+
+ }
+ .content_update h1{
+ 	padding: 0;
+	text-align: center;
+	background: #58F047;
+	margin: 0;
+	border: 
+
+ }
+ .updateproduct div,span{
+ 	display: block;
+ 	width: 100%;
+ 	padding: 5px;
+ 	margin: auto;
+ }
+ #Cancel{
+ 	background: red;
+ 	color: white;
+ 	margin-left: 4px;
+ 	float: right;
+ }
+ #Accept{
+ 	background: green;
+ 	
+ 	color: white;
+ 	float: right;
+ }
+ #Accept_Cancel{
+ 	display: inline-flex;
+ 	float: right;
+ }
+ #Accept_Cancel div{
+ 	margin-right: 3px; 
+ }
+
+ 

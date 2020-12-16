@@ -17,7 +17,7 @@
 		</div>
 		<div class="wrapper">
 			<div class="CartDetail">
-				<div><h1>Giỏ Hàng của bạn</h1></div>
+				<div style="background: green"><h1>Giỏ Hàng của bạn</h1></div>
 				<!-- <div class="carthead">
 					<ul>
 						<li>STT</li>
@@ -68,7 +68,14 @@
 					    </tbody>
 					</table>
 			</div>
-
+			
+			<div>
+				<h1>Tổng tiền: <?php echo "500.000 vnd"; ?></h1>
+			</div>
+			<div>
+				<div> <input id="submit" type="submit" name="" value="Thanh Toán "> </div>
+			</div>
+			
 		</div>
 	</div>
 	<?php include '../components/footer.php'; ?>
