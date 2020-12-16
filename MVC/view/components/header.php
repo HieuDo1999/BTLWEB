@@ -18,29 +18,35 @@
             </ul>
          </div>       
         
-        <?php if (1): ?>
-             <div id="re_lo">
-                <span><a href="#">Đăng ký</a></span>
-                
-                <span><a href="#">Đăng nhập</a></span>
-            </div>
-            <?php else: ?>
-                <div id="re_lo"><span><a href="#">Đăng Xuất</a></span></div>
-        <?php endif ?>  
-    </div>
+            <?php if (1): ?>
+                 <div id="re_lo">
+                    <span><a href="#">Đăng ký</a></span>
+                    
+                    <span><a href="#">Đăng nhập</a></span>
+                </div>
+                <?php else: ?>
+                    <div id="re_lo"><span><a href="#">Đăng Xuất</a></span></div>
+            <?php endif ?> 
+            <div >
+               <div class="cart"><a href="http://localhost/BTLWEB/MVC/view/customer/cartDetail.php">
+                   <i class="fas fa-shopping-cart "></i>
+               </a></div>
+            </div> 
+        </div>
+        
     
     <div class="logoheader">
         <div id="img"><img id="logo" src="../../public/image/logobanh.png"></div>
         <div id="logoheader">Chức Đào Bakery </div>
-        <div class="search"> 
-            <input id="text_search" type="text" name="textsearch">
-            <input id="submit_search" type="submit" name="" value="search">
+        <div class="search">
+            <form action="" method="POST">
+                 <input id="text_search" type="text" name="textsearch">
+                <input id="submit_search" type="submit" name="" value="search">
+                <a href="http://localhost/BTLWEB/MVC/view/customer/cart.php"><i class="fas fa-shopping-cart fa-2x"></i></a>
+            </form> 
+           
         </div>           
-        <div >
-           <div class="cart"><a href="http://localhost/BTLWEB/MVC/view/customer/cartDetail.php">
-               <i class="fas fa-shopping-cart fa-2x"></i>
-           </a></div>
-        </div>
+        
     </div>
     
 </div>
