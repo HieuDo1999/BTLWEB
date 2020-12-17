@@ -48,10 +48,10 @@ class ProductController extends framework {
     public function viewProduct(){
         include_once ('./MVC/model/ProductModel.php');
         $productId=$_GET['p'];
-        echo $productId;
+      
         $Product=new ProductModel();
         $data=$Product->viewProduct($productId);
-        $this->view('Product/view',$data);     
+        $this->view('customer/viewProduct',$data);     
     }
     public function deleteProduct(){
         if(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level']==2 ) {

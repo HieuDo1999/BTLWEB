@@ -3,7 +3,7 @@
     <div class="menu_header">
          <div class="list_header">
              <ul>
-                <li><a href="http://localhost/WEB/MVC/view/customer/index.php"><i class="fas fa-home"></i>
+                <li><a href="http://localhost/WEB/?c=AccountController&m=login"><i class="fas fa-home"></i>
                 Trang Chủ</a></li>
                 <li>
                     <a href="#">Loại Sản Phẩm</a>
@@ -28,7 +28,7 @@
                     <div id="re_lo"><span><a href="#">Đăng Xuất</a></span></div>
             <?php endif ?> 
             <div >
-               <div class="cart"><a href="http://localhost/WEB/MVC/view/customer/cartDetail.php">
+               <div class="cart"><a href="http://localhost/BTLWEB/MVC/view/customer/findProduct.php">
                    <i class="fas fa-shopping-cart "></i>
                </a></div>
             </div> 
@@ -39,10 +39,10 @@
         <div id="img"><img id="logo" src="http://localhost/WEB/MVC/public/image/logobanh.png"></div>
         <div id="logoheader">Chức Đào Bakery </div>
         <div class="search">
-            <form action="" method="POST">
+            <form action="http://localhost/BTLWEB/MVC/view/customer/findProduct.php" method="POST">
                  <input id="text_search" type="text" name="textsearch">
                 <input id="submit_search" type="submit" name="" value="search">
-                <a href="http://localhost/WEB/MVC/view/customer/cart.php"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                
             </form> 
            
         </div>           

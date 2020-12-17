@@ -6,10 +6,14 @@
             $this->view('login');
            
         }
-        //view home client
         public function home(){
-            $this->view('customer/index');
+            include_once ('./MVC/model/ProductModel.php');
+            $product=new ProductModel();
+            $data=[];
+            $data=$product->getListProduct();
+            $this->view('customer/index',$data);
         }
+        
         //check login is admin or customer
         public function checkLogin(){
 

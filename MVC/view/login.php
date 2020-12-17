@@ -1,5 +1,5 @@
     
-<a href="http://localhost/WEB/?c=AccountController&m=homeClient" > Trang chủ</a>
+<a href="http://localhost/WEB/?c=AccountController&m=home" > Trang chủ</a>
 <h2>Login</h2>
     <form action="?c=AccountController&m=checkLogin" method="POST">
     <div class="form-group">

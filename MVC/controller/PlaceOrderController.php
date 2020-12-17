@@ -11,12 +11,13 @@ class PlaceOrderController extends framework
         include_once('./MVC/model/ProductModel.php');
         $product_id= isset($_GET['p']) ? $_GET['p'] : "";
         
-        // $quantity=$_POST['qty'];
-        $quantity = 1;
+        $quantity=$this->input('qty');
+       
         $productModel = new ProductModel();
         $products = $productModel->viewProduct($product_id);
         foreach ($products as $product){
         include('./MVC/model/PlaceOrderModel.php');
+        include('./MVC/controller/AccountController.php');
         $cart = new PlaceOrderModel();
         if (!isset($_SESSION['cart'][$product_id])) { //check đã tồn tại giỏ hàng có chữa sản phẩm cần thêm ?
             $_SESSION['cart'][$product_id] = array( //nếu chưa thì khởi tạo
@@ -44,7 +45,8 @@ class PlaceOrderController extends framework
             }
         }
     }
-        $this->view('client/home');
+        $acc= new AccountController();
+        $acc->home();
     }
     public function updateCart()
     { //update cart với đầu vào là danh sách các sp chỉ quan tâm đến id, quantity 

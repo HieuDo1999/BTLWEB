@@ -19,6 +19,7 @@ class CustomerController extends framework {
         $data=$customer->findCustomerByName($name);
         $this->view('admin/indexCustomer',$data);
     }
+  
 
 
     public function editCustomer(){
