@@ -7,7 +7,7 @@
         <meta charset="utf-8">
             <meta content="width=device-width, initial-scale=1.0" name="viewport">
                 <link href="css/fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet" type="text/css"/>
-                <link href="css/login.css" rel="stylesheet" type="text/css"/>
+                <link href="../../public/css/style.css" rel="stylesheet" type="text/css"/>
             </meta>
         </meta>
     </head>
@@ -30,7 +30,7 @@
                             <input placeholder="Nhập mật khẩu" type="password"/>
                         </div>
                         <div class="login-btn-box">
-                            <a href="register.html">
+                            <a href="register.php">
                                 <span>
                                     Chưa có tài khoản? Đăng ký ngay!
                                 </span>
