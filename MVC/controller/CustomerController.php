@@ -1,4 +1,4 @@
-<h1>CustomerController</h1>
+
 <?php 
  include_once ('./MVC/helper/framework.php');
  $is_logged=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token'] :"";
@@ -9,8 +9,18 @@ class CustomerController extends framework {
         $customer=new CustomerModel();
         $data=[];
         $data=$customer->getListCustomer();
-        $this->view('customer/index',$data);
+        $this->view('admin/indexCustomer',$data);
     }
+    public function findCustomerByName(){
+        include_once ('./MVC/model/CustomerModel.php');
+        $name=$this->input('customer_name');
+        $customer=new CustomerModel();
+        $data=[];
+        $data=$customer->findCustomerByName($name);
+        $this->view('admin/indexCustomer',$data);
+    }
+
+
     public function editCustomer(){
         include_once ('./MVC/model/CustomerModel.php');
         $data=[

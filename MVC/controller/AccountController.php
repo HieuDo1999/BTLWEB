@@ -1,10 +1,10 @@
-
 <?php 
     include_once ('./MVC/helper/framework.php');
     class AccountController extends framework{
         //view login
         public function login(){
             $this->view('login');
+           
         }
         //view home client
         public function home(){
@@ -45,7 +45,7 @@
 
         //đăng kí tài khoản khách hàng
         public function viewSignUpForm(){
-           $this->view('client/sign_up'); 
+           $this->view('sign_up'); 
         }
         public function signUp(){
             include_once ('./MVC/controller/CustomerController.php');
@@ -58,10 +58,7 @@
            }
 
         }
-        //view form login
-        public function loginCustomer (){
-            $this->view('login');
-        }
+       
 
 
         public function logout(){

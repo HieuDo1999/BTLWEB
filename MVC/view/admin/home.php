@@ -3,12 +3,12 @@
 <head>
 	<title>Home</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-	<link rel="stylesheet" type="text/css" href="../../public/fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/WEB/MVC/public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/WEB/MVC/public/fontawesome/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<?php include '../components/header_admin.php'; ?>
+	<?php include './MVC/view/components/header_admin.php'; ?>
 	<div class="admincontent">
 		<div class="home">
 			<div><h1>Thông tin các đơn hàng</h1></div>

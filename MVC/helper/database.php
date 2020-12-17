@@ -38,7 +38,7 @@
         return $sql;
     }
     public function validateId($sql){
-        $sql=preg_replace("/[^A-Za-z0-9]/",'',$sql);
+        $sql=preg_replace("/[^A-Za-z0-9:\/. ]/",'',$sql);
         return $sql;
     }
 

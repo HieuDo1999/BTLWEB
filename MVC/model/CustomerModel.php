@@ -9,6 +9,15 @@
             $res=$this->db_get_list($sql);
             return( $res);
         }
+
+        public function findCustomerByName($name){
+            $sql="select * from db_customer where name='$name';";
+            echo $sql;
+            $sql=$this->validateSql($sql);
+            $res=$this->db_get_list($sql);
+            return( $res);
+        }
+
         public function editCustomer($data){//thieu
            
             $username=$this->validateId($data['username']);

@@ -1,4 +1,4 @@
-<h1>ProductController</h1>
+
 <?php 
  include_once ('./MVC/helper/framework.php');
  $is_logged=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token'] :"";
@@ -9,20 +9,29 @@ class ProductController extends framework {
         $Product=new ProductModel();
         $dataProduct=[];
         $dataProduct=$Product->getListProduct();
-        $this->view('product/index',$dataProduct);
+        $this->view('admin/indexProduct',$dataProduct);
     }
     public function editProduct(){
         if(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level']==2 ) {
         include_once ('./MVC/model/ProductModel.php');
+    
+        $img="http://localhost/WEB/MVC/public/image/".$this->input('img');
+            if(!$img){
+                $img="http://localhost/WEB/MVC/public/image/".$this->input('old_img');
+            }
+      echo $img;
+      
         $data=[
             'id'=> $this->input('id'),
             'name'=>$this->input('name'),
             'price'=>$this->input('price'),
-            'category_id'=>$this->input('catgory_id'),
+            'category_id'=>$this->input('category_id'),
             'quantity'=>$this->input('quantity'),
-            'img'=>$this->input('img'),
+            'img'=>$img,
+            'description'=>$this->input('description'),
             
         ];
+        print_r($data);
         $Product=new ProductModel();
         $res=$Product->editProduct($data);
         if($res){
@@ -58,17 +67,20 @@ class ProductController extends framework {
       }
     }
     public function viewFormAddProduct(){
-        $this->view('Product/add');
+        $this->view('admin/addProduct');
     }
     public function addProduct(){
         if(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level']==2 ) {
-        $data=[
-            'id'=> $this->input('id'),
-            'name'=>$this->input('name'),
+            $img="http://localhost/WEB/MVC/public/image/".$_FILES['img']['name'];
+     
+            $data=[
+            'id'=> $this->input('product_id'),
+            'name'=>$this->input('product_name'),
             'price'=>$this->input('price'),
-            'category_id'=>$this->input('catgory_id'),
+            'category_id'=>$this->input('category_id'),
             'quantity'=>$this->input('quantity'),
-            'img'=>$this->input('img'),
+            'img'=>$img,
+            'description'=>$this->input('description')
 
         ];
         include_once ('./MVC/model/ProductModel.php');
@@ -81,6 +93,9 @@ class ProductController extends framework {
         //
 
         }
+    }
+    public function productDetail(){
+        
     }
 
 }

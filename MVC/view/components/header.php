@@ -22,7 +22,7 @@
                  <div id="re_lo">
                     <span><a href="#">Đăng ký</a></span>
                     
-                    <span><a href="#">Đăng nhập</a></span>
+                    <span><a href="http://localhost/WEB/?c=AccountController&m=login">Đăng nhập</a></span>
                 </div>
                 <?php else: ?>
                     <div id="re_lo"><span><a href="#">Đăng Xuất</a></span></div>
@@ -36,7 +36,7 @@
         
     
     <div class="logoheader">
-        <div id="img"><img id="logo" src="../../public/image/logobanh.png"></div>
+        <div id="img"><img id="logo" src="http://localhost/WEB/MVC/public/image/logobanh.png"></div>
         <div id="logoheader">Chức Đào Bakery </div>
         <div class="search">
             <form action="" method="POST">

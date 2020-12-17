@@ -17,18 +17,21 @@
             $ProductPrice=$this->validateId($data['price']);
             $CategoryId=$this->validateId($data['category_id']);
             $Quantity=$this->validateId($data['quantity']);
-            $img=$this->validateId($data['img']);
+            $img=($data['img']);
+            $description=$data['description'];
         
             
-            $sql=" UPDATE db_Product SET 
+            $sql=" UPDATE db_product SET 
                                          name='$ProductName',
                                          price='$ProductPrice' ,
                                          category_id='$CategoryId' ,
                                          quantity='$Quantity' ,
-                                         img='$img'
+                                         img='$img',
+                                         description='$description'
                                          WHERE id='$ProductId';
                                                                 ";
-            $sql=$this->validateSql($sql);                                                    
+            // $sql=$this->validateSql($sql);    
+            echo $sql;                                                
             $res=$this->excuteDB($sql); 
             return $res;
         }
@@ -46,24 +49,23 @@
             global $conn;
             $id=$this->validateId($id);
             $sql="delete from db_Product where id='$id';";
-            $sql=$this->validateSql($sql);
+            // $sql=$this->validateSql($sql);
             $res=mysqli_query($conn,$sql);
             return $res;
 
         }
         public function addProduct($data){
-            $this->connectDB();
+           
             $ProductId=$this->validateId($data['id']);
             $ProductName=$this->validateId($data['name']);
             $ProductPrice=$this->validateId($data['price']);
             $CategoryId=$this->validateId($data['category_id']);
             $Quantity=$this->validateId($data['quantity']);
             $img=$this->validateId($data['img']);
-            // $active=$this->validateId($data['active']);
+            $description=$this->validateId($data['description']);
             global $conn;
-            $sql="insert into db_Product (id,name,price,category_id,quantity,img) 
-            values('$ProductId','$ProductName','$ProductPrice','$CategoryId','$Quantity','$img');";
-            $sql=$this->validateSql($sql);
+            $sql="insert into db_product (id,name,price,category_id,quantity,img,description) values('$ProductId','$ProductName','$ProductPrice','$CategoryId','$Quantity','$img','$description');";
+            // $sql=$this->validateSql($sql);
             $res=$this->excuteDB($sql);
             echo $sql;
             return $res;
