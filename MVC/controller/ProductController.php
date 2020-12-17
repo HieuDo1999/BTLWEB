@@ -1,16 +1,18 @@
 <h1>ProductController</h1>
 <?php 
  include_once ('./MVC/helper/framework.php');
+ $is_logged=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token'] :"";
+// if(!$is_logged||$is_logged['level']!=2) die ("not found file");
 class ProductController extends framework {
     public function getListProduct(){
         include_once ('./MVC/model/ProductModel.php');
         $Product=new ProductModel();
         $dataProduct=[];
         $dataProduct=$Product->getListProduct();
-        $this->view('Product/index',$dataProduct);
+        $this->view('product/index',$dataProduct);
     }
     public function editProduct(){
-        if(isset($_SESSION['ss_user_token']) && $_SESSION['level']==2 ) {
+        if(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level']==2 ) {
         include_once ('./MVC/model/ProductModel.php');
         $data=[
             'id'=> $this->input('id'),
@@ -43,7 +45,7 @@ class ProductController extends framework {
         $this->view('Product/view',$data);     
     }
     public function deleteProduct(){
-        if(isset($_SESSION['ss_user_token']) && $_SESSION['level']==2 ) {
+        if(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level']==2 ) {
         $productId=$_GET['p'];
         echo $productId;
         include_once ('./MVC/model/ProductModel.php');
@@ -59,7 +61,7 @@ class ProductController extends framework {
         $this->view('Product/add');
     }
     public function addProduct(){
-        if(isset($_SESSION['ss_user_token']) && $_SESSION['level']==2 ) {
+        if(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level']==2 ) {
         $data=[
             'id'=> $this->input('id'),
             'name'=>$this->input('name'),

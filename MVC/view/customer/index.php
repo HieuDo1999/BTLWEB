@@ -3,22 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chức Đào Cakes</title>
+  <title>Chức Đào Bakery</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../public/fontawesome/css/all.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <div>
-    <?php 
+  <?php 
    include ("../components/header.php");
   ?>
   <div><img id="img_head" src="../../public/image/anhnen.jpg"></div>
-  </div>
+   <?php include ("../components/sidebar.php") ?>
   <div>
-    <div>
-     <?php include ("../components/sidebar.php") ?>
-    </div>
 
     <div class="wrapper">
       <div id="index_title"><h1>Các sản phẩm</h1></div>

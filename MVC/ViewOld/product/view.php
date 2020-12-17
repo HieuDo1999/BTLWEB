@@ -30,6 +30,7 @@
          
           <td><button class="btn btn-primary" type="submit" >update product</button></td>
           <td><a href="http://localhost/WEB/?c=ProductController&m=deleteProduct&p=<?php echo $product['id']; ?>">delelte</a></td>
+          <td><a href="http://localhost/WEB/?c=PlaceOrderController&m=addProductToCard&p=<?php echo $product['id']; ?>">add to cart</a></td>
       </tr>
       </form> 
       <?php endforeach;?>

@@ -7,7 +7,6 @@
     include_once ('./MVC/controller/productController.php');
    
 ?>
-<h1>Danh sach cus</h1>
 <a href="http://localhost/WEB/?c=ProductController&m=viewFormAddProduct">add product</a>
 
 <table id="cus" class="table table-striped table-bordered" style="width:100%" border="1">
