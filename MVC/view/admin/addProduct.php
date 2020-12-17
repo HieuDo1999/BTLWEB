@@ -9,9 +9,10 @@
 </head>
 <body>
 	<?php include '../components/header_admin.php'; ?>
+	
 	<div class="content_update">
 		<div id="headupdate"><h1>Thêm sản phảm</h1></div>
-		<form>
+		<form action=" " method="POST" enctype="multipart/form-data">
 			<div class="updateproduct">
 				<div>
 					<div><span>Mã Số</span></div>
@@ -49,9 +50,35 @@
 				</div>
 
 			</div>
-			<div ><input id="submit" type="Submit" name="" value="Update"></div>
+			<div ><input id="submit" type="Submit" name="Update" value="Update"></div>
 		</form>
 	</div>
+
+	<?php if(isset($_FILES["image"]))
+	$img_url="";
+		$file= $_FILES["image"];
+		$file_name = $_FILES["image"]["name"];
+      	$file_size = $_FILES["image"]["size"]; 
+      	$file_tmp = $_FILES["image"]["tmp_name"];
+      	$file_type= $_FILES["image"]["type"];
+      	$ext = explode(".", $file_name);
+      	$file_ext = strtolower(end($ext));
+
+      	$array_ext = array("png" ,"jpg" );
+
+
+      	if(!in_array($file_ext, $array_ext)){
+      		echo "file khong dung dinh dang";
+      		exit();
+      	}
+      	
+		move_uploaded_file($file_tmp, "../../public/image/".$file_name);
+		exit();
+			$img_url="../../public/image/".$file_name;
+	?>
+	<?php if ($img_url): ?>
+		<img src="<?php echo $img_url; ?>">
+	<?php endif ?>
 
 </body>
 </html>

@@ -28,7 +28,7 @@
                     <div id="re_lo"><span><a href="#">Đăng Xuất</a></span></div>
             <?php endif ?> 
             <div >
-               <div class="cart"><a href="http://localhost/BTLWEB/MVC/view/customer/cartDetail.php">
+               <div class="cart"><a href="http://localhost/BTLWEB/MVC/view/customer/findProduct.php">
                    <i class="fas fa-shopping-cart "></i>
                </a></div>
             </div> 
@@ -39,7 +39,7 @@
         <div id="img"><img id="logo" src="../../public/image/logobanh.png"></div>
         <div id="logoheader">Chức Đào Bakery </div>
         <div class="search">
-            <form action="" method="POST">
+            <form action="http://localhost/BTLWEB/MVC/view/customer/findProduct.php" method="POST">
                  <input id="text_search" type="text" name="textsearch">
                 <input id="submit_search" type="submit" name="" value="search">
                 
