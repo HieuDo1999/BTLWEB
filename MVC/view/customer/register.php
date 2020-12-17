@@ -17,7 +17,7 @@
                 <div class="login-form">
                     <form action="" method="post">
                         <h1>
-                            Đăng nhập vào website
+                            Đăng ký tài khoản mới
                         </h1>
                         <div class="login-input-box">
                             <i>
@@ -29,14 +29,29 @@
                             </i>
                             <input placeholder="Nhập mật khẩu" type="password"/>
                         </div>
+                        <div class="login-input-box">
+                            <i>
+                            </i>
+                            <input placeholder="Nhập Họ Tên" type="text"/>
+                        </div>
+                        <div class="login-input-box">
+                            <i>
+                            </i>
+                            <input placeholder="Nhập Số điện thoại" type="text"/>
+                        </div>
+                        <div class="login-input-box">
+                            <i>
+                            </i>
+                            <input placeholder="Nhập Địa chỉ" type="text"/>
+                        </div>
                         <div class="login-btn-box">
-                            <a href="register.html">
+                            <a href="login.html">
                                 <span>
-                                    Chưa có tài khoản? Đăng ký ngay!
+                                    Đã có tài khoản? Đăng nhập.
                                 </span>
                             </a>
                             <button type="submit">
-                                Đăng nhập
+                                Đăng ký
                             </button>
                         </div>
                     </form>
