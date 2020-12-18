@@ -40,7 +40,15 @@
             global $conn;
             $id=$this->validateId($id);
             $sql="select * from db_product where id='$id'";
-            $sql=$this->validateSql($sql);
+            // $sql=$this->validateSql($sql);
+            $res=$this->db_get_list($sql);
+            return $res;  
+        }
+        public function findProductByName($product_name){
+           
+            $id=$this->validateId($product_name);
+            $sql="select * from db_product where name like '%$product_name%'";
+            // $sql=$this->validateSql($sql);
             $res=$this->db_get_list($sql);
             return $res;  
         }

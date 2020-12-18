@@ -1,4 +1,3 @@
-<h1>AdminController</h1>
 <?php
 
 // if(!$is_logged||$is_logged['level']!=1) die ("not found file");
@@ -6,7 +5,8 @@ include_once('./MVC/helper/framework.php');
 class PlaceOrderController extends framework
 {   
     public function addProductToCard()
-    {
+    { 
+        echo "hhe";
         $customer_id = (isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level'] == 1) ? $_SESSION['ss_user_token']['username'] : "";
         include_once('./MVC/model/ProductModel.php');
         $product_id= isset($_GET['p']) ? $_GET['p'] : "";
@@ -15,6 +15,7 @@ class PlaceOrderController extends framework
        
         $productModel = new ProductModel();
         $products = $productModel->viewProduct($product_id);
+        print_r($products);
         foreach ($products as $product){
         include('./MVC/model/PlaceOrderModel.php');
         include('./MVC/controller/AccountController.php');
@@ -30,7 +31,7 @@ class PlaceOrderController extends framework
                 'img' => $product['img'],
 
             );
-           print_r($_SESSION['cart']);
+       
             if ($customer_id) {
                 $res = $cart->addToCart($_SESSION['cart'][$product_id]);
                 if ($res) echo "da luu \n";
@@ -38,7 +39,7 @@ class PlaceOrderController extends framework
         } else { // nếu có rồi thì cộng qty
             echo $product['id'];
             $_SESSION['cart'][$product_id]['quantity'] += $quantity;
-            print_r( $_SESSION['cart']);
+       
             if ($customer_id) {
                 $res = $cart->updateQty($_SESSION['cart'][$product_id]);
                 if ($res) echo "da update \n";
@@ -81,14 +82,41 @@ class PlaceOrderController extends framework
         $cart=new PlaceOrderModel();
         $cart->deleteCartDB($cus_id);
         }
-        $this->view('client/home');
+        $this->view('customer/cartDetail');
     }
-    public function viewCart()
-    {include('./MVC/model/PlaceOrderModel.php');
+    public function deleteProductFromCart(){
+        $product_id=isset($_GET['p'])?$_GET['p']:'';
+        if($product_id) {
+            unset($_SESSION['cart'][$product_id]);
+        }
+
+        if (isset($_SESSION['ss_user_token'])&&$_SESSION['ss_user_token']['level']==1) {
+     
+        include_once('./MVC/model/PlaceOrderModel.php');
         $cart=new PlaceOrderModel();
-        $carts=$cart->getCart();
-        print_r($carts);
-        $this->view('client/home');
+        $cart->deleteProductFromCartDB($product_id);
+        }
+        $this->viewCart();
+    }
+
+    public function viewCart()
+    {
+        if (isset($_SESSION['ss_user_token'])&&$_SESSION['ss_user_token']['level']==1) {
+            include_once('./MVC/model/PlaceOrderModel.php');
+            $cart=new PlaceOrderModel();
+            $carts=$cart->getCartFromDB();
+           
+            $this->view('customer/cartDetail',$carts);
+        }
+        else{
+            if(isset($_SESSION['cart'])){
+            $carts=$_SESSION['cart'];
+            $this->view('customer/cartDetail',$carts);
+            }
+            else{
+                $this->view('customer/cartDetail');
+            }
+        }
     }
 }
 

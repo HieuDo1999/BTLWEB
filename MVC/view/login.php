@@ -5,7 +5,7 @@
     <div class="form-group">
     <input type="text" name="username" class="form-control"  value="">
     <div class="error">
-       
+   
     </div>
     </div>
     <!-- Close form-group -->

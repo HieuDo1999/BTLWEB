@@ -63,6 +63,9 @@
           }
           public function set_logout(){
               $this->session_delete('ss_user_token');
+              $this->session_delete('cart');
+
+
           }
           public function get_username(){
               $user=$this->is_logged();

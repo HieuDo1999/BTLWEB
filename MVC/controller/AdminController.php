@@ -1,4 +1,3 @@
-<h1>AdminController</h1>
 <?php 
 $is_logged=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token'] :"";
 if(!$is_logged||$is_logged['level']!=2) die ("not found file");

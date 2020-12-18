@@ -34,10 +34,10 @@
                 
             }
             else if($checkCus)
-            {
+            {   
                 $this->set_logged($data['username'],1);
                 $data['username']=$this->get_username();
-                $this->view('client/home',$data);
+                $this->home();
             }else{
                 
                 $this->view('login');
@@ -55,8 +55,10 @@
             include_once ('./MVC/controller/CustomerController.php');
             $cus=new CustomerController();
            $res= $cus->addCustomer();
+          
            if($res){
-                echo "them thanh cong";
+               $this->login();
+                echo "dang ki thanh cong";
            }else{
                 echo"fail";
            }

@@ -66,6 +66,14 @@ class ProductController extends framework {
         else echo "delete fail";
       }
     }
+
+    public function viewProductByName(){
+        include_once ('./MVC/model/ProductModel.php');
+        $Product= new ProductModel();
+        $product_name=$this->input('product_name');
+        $products=$Product->findProductByName($product_name);
+        $this->view('customer/findProduct',$products);
+    }
     public function viewFormAddProduct(){
         $this->view('admin/addProduct');
     }

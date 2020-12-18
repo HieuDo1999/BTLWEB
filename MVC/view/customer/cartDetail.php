@@ -3,8 +3,8 @@
 <head>
 	<title>CartDetail </title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./WEB/MVC/public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./WEB/MVC/public/fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/WEB/MVC/public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/WEB/MVC/public/fontawesome/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -15,19 +15,12 @@
 		<div>
 			<?php include_once ('./MVC/view/components/sidebar.php'); ?>
 		</div>
+		<form action="?c=PaymentController&m=saveOrder" method="post">
 		<div class="wrapper">
+			
 			<div class="CartDetail">
 				<div style="background: green"><h1>Giỏ Hàng của bạn</h1></div>
-				<!-- <div class="carthead">
-					<ul>
-						<li>STT</li>
-						<li>Product</li>
-						<li>Quantity</li>
-						<li>Price</li>
-						<li>Pay Total </li>
-						<li>Delete</li>
-					</ul>
-				</div> -->
+				
 				<table class="table">
 					    <thead>
 					      	<tr>
@@ -36,49 +29,49 @@
 						        <th>Số Lượng</th>
 						        <th>Đơn Giá</th>
 						        <th>Thành Tiền</th>
-						        <th>Xóa</th>
+								<th>Xóa</th>
+								
 					      	</tr>
 					    </thead>
 					    <tbody>
+							<?php $total=0;
+							if($data){
+							 foreach($data as $products): ?>
 					    	<tr class="list_item">
 					    		<td>
-					    			<img src="../../public/image/opera.jpg">
-					    			<div><h2>Banh Opera</h2></div>
+								<a href="http://localhost/WEB/?c=ProductController&m=viewProduct&p=<?php echo $products['product_id']?>">
+									<img src="<?php echo $products['img'] ;?>"    />
+									</a>
+					    			<div><h2><?php echo $products['product_name']; ?></h2></div>
 					    		</td>
 					    		<td>
-					    			<input type="number" name="soluong" value="1" min="0" max="99" >
+					    			<input type="number" name="soluong" value="<?php echo $products['quantity'] ?>" min="0" max="99" >
 					    		</td>
-					    		<td>50.000 vnd</td>
-					    		<td>1.000.000 vnd</td>
-					    		<td><i class="fas fa-trash-alt"></i></td>
+					    		<td><?php echo $products['price'] ;?></td>
+					    		<td><?php echo $money=$products['price'] * $products['quantity']; ?></td>
+								<td><a href="?c=PlaceOrderController&m=deleteProductFromCart&p=<?php echo $products['product_id']; ?>" class="fas fa-trash-alt"></a></td>
+								<?php
+								
+								$total+=$money; ?>
 					    	</tr>
-					    	<tr class="list_item">
-					    		<td >
-					    			<img src="../../public/image/opera.jpg">
-					    			<div><h2>Banh Opera</h2></div>
-					    		</td>
-					    		<td>
-					    			<input type="number" name="soluong" value="1" min="0" max="99" >
-					    		</td>
-					    		<td>50.000 vnd</td>
-					    		<td>1.000.000 vnd</td>
-					    		<td><i class="fas fa-trash-alt"></i></td>
-					    	</tr>
-							
+							<?php endforeach;
+							} ?>
+							<a class="fas fa-trash-alt" href="?c=PlaceOrderController&m=deleteCart"> xóa giỏ hàng</a>
 					    </tbody>
 					</table>
 			</div>
-			
 			<div>
-				<h1>Tổng tiền: <?php echo "500.000 vnd"; ?></h1>
+			<input name="amount" type="hidden" value="<?php echo $total; ?>"> </input>
+				<h1 >Tổng tiền: <?php echo $total; ?></h1>
 			</div>
 			<div>
-				<div> <input id="submit" type="submit" name="" value="Thanh Toán "> </div>
+				<div> <button id="submit" type="submit" name="" value="Thanh Toán ">Thanh toan </div>
 			</div>
 			
 		</div>
+		</form>
 	</div>
-	<?php include '../components/footer.php'; ?>
+	<?php include './MVC/view/components/footer.php'; ?>
 	
 </body>
 </html>

@@ -13,10 +13,10 @@ include_once ('./MVC/helper/database.php');
             $price=$cart['price'];
             $quantity=$cart['quantity'];
             $img=$cart['img'];
-            print_r($cart);
+
             $sql="insert into db_cart (id,customer_id,product_id,product_name,price,quantity,img) values('$id','$customer_id','$product_id','$product_name','$price','$quantity','$img');";
-            $sql=$this->validateSql($sql);
-            print_r($sql);
+            // $sql=$this->validateSql($sql);
+         
             $res=$this->excuteDB($sql);
             return $res;
 
@@ -35,7 +35,12 @@ include_once ('./MVC/helper/database.php');
             $res=$this->excuteDB($sql);
             return $res;
         }
-        public function getCart(){
+        public function deleteProductFromCartDB($product_id){
+            $sql="delete from db_cart where product_id='$product_id';";
+            $res=$this->excuteDB($sql);
+            return $res;
+        }
+        public function getCartFromDB(){
             $sql="select * from db_cart;";
             $res=$this->db_get_list($sql);
             return $res;

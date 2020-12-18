@@ -46,7 +46,6 @@
             global $conn;
             $username=$this->validateId($username);
             $sql=$this->validateSql("select * from db_customer where username='$username'");
-
             $res=$this->db_get_list($sql);
             return $res;  
         }
@@ -71,15 +70,13 @@
         public function addCustomer($data){
             $this->connectDB();
             $username=$this->validateId($data['username']);
-            $password=$this->validateId($data['username']);
-            $name=$this->validateId($data['name']);
-            $email=$this->validateId($data['email']);
-            $sex=$this->validateId($data['sex']);
+            $password=$this->validateId($data['password']);
+            $name=$this->validateId("name");
             $phone=$this->validateId($data['phone']);
             $address=$this->validateId($data['address']);
             global $conn;
-            $sql="insert into db_customer (username,password,name,email,sex,phone,address) 
-            values('$username','$password','$name','$email','$sex','$phone','$address');";
+            $sql="insert into db_customer (username,password,name,phone,address) 
+            values('$username','$password','$name','$phone','$address');";
             $sql=$this->validateSql($sql);
             $res=$this->excuteDB($sql);
             return $res;
