@@ -74,6 +74,17 @@ class ProductController extends framework {
         $products=$Product->findProductByName($product_name);
         $this->view('customer/findProduct',$products);
     }
+    public function viewProductByCategory(){
+        $cate_id=isset($_GET['p'])? $_GET['p']:'';
+        if($cate_id){
+            include_once ('./MVC/model/ProductModel.php');
+            $Product= new ProductModel();
+            $res=$Product->viewProductByCategory($cate_id);
+            $this->view('customer/findProduct',$res);
+        }
+
+
+    }
     public function viewFormAddProduct(){
         $this->view('admin/addProduct');
     }

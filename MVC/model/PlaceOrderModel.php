@@ -40,8 +40,8 @@ include_once ('./MVC/helper/database.php');
             $res=$this->excuteDB($sql);
             return $res;
         }
-        public function getCartFromDB(){
-            $sql="select * from db_cart;";
+        public function getCartFromDB($customer_id){
+            $sql="select * from db_cart where customer_id='$customer_id';";
             $res=$this->db_get_list($sql);
             return $res;
         }

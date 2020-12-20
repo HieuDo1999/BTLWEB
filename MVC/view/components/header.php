@@ -26,6 +26,14 @@
                     <span><a href="http://localhost/WEB/?c=AccountController&m=login">Đăng nhập</a></span>
                 </div>
                 <?php else: ?>
+                    <?php include_once ('./MVC/controller/CustomerController.php');
+                        $cus=new CustomerController();
+
+                    ?>
+                    <div><h2>Hello <?php foreach($cus->getCustomerName() as $cusname):
+                           echo  $cusname['name'];
+                    endforeach;
+                        ; ?></h2></div>
                     <div id="re_lo"><span><a href="?c=AccountController&m=logout">Đăng Xuất</a></span></div>
             <?php endif ?> 
             <div >

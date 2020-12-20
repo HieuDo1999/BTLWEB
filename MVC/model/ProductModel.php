@@ -52,6 +52,14 @@
             $res=$this->db_get_list($sql);
             return $res;  
         }
+
+        public function viewProductByCategory($CategoryId){
+            $sql="select * from db_product where category_id like '%$CategoryId%';";
+            $res=$this->db_get_list($sql);
+            print_r($res);
+            return $res;
+        }
+
         public function deleteProduct($id){
             $this->connectDB();
             global $conn;
@@ -77,8 +85,8 @@
             $res=$this->excuteDB($sql);
             echo $sql;
             return $res;
-
         }
+      
 
 
     }

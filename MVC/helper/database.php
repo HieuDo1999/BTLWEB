@@ -24,10 +24,12 @@
         global $conn;
         $data  = array();
         $result = mysqli_query($conn, $sql);
+        if($result){
         while ($row = mysqli_fetch_assoc($result)){
             $data[] = $row;
         }
-        return $data;
+        return $data;}
+        else return $data;
     }
 
        //validate trong sql

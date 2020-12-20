@@ -21,7 +21,7 @@
 				<div id="info_pr">
 					<div><span><?php echo $product['name']?></span></div>
 					<div><?php echo $product['price'] ?></div>
-					<div>Số Lượng: <input type="number" name="qty" min="1" max="9" ></div>
+					<div>Số Lượng: <input type="number" name="qty" min="1" max="99" value="1" ></div>
 					<div> <button id="add_to_cart" type="submit" >Add to cart </button></div>
 					<div class="des"><h2><?php echo $product['description'] ?></h2></div>
 				</div>

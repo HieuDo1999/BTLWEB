@@ -103,8 +103,9 @@ class PlaceOrderController extends framework
     {
         if (isset($_SESSION['ss_user_token'])&&$_SESSION['ss_user_token']['level']==1) {
             include_once('./MVC/model/PlaceOrderModel.php');
+            $customer_id=$_SESSION['ss_user_token']['username'];
             $cart=new PlaceOrderModel();
-            $carts=$cart->getCartFromDB();
+            $carts=$cart->getCartFromDB($customer_id);
            
             $this->view('customer/cartDetail',$carts);
         }

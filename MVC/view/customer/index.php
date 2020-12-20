@@ -38,7 +38,7 @@
                   <h5 class="price_product">Giá: <?php echo $products['price'] ?></h5>
                 </div>
                 <div class="detail_add">
-                  <div>Số Lượng: <input type="number" name="qty" min="1" max="9"></div>
+                  <div>Số Lượng: <input type="number" name="qty" min="1" max="99" value="1"></div>
                   <div class="detail_product"><a href="http://localhost/WEB/?c=ProductController&m=viewProduct&p=<?php echo $products['id'] ?>">Chi tiết</a></div>
                   <div> <button type="submit" >Add to cart </button></div>
                 </div>

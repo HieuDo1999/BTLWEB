@@ -54,9 +54,11 @@
             global $conn;
             $username=$this->validateId($username);
             $sql=$this->validateSql("select name from db_customer where username='$username'");
-            $res=$this->excuteDB($sql);
+            $res=$this->db_get_list($sql);
             return $res;  
         }
+
+       
 
         public function deleteCustomer($username){
             $this->connectDB();

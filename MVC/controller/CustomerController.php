@@ -49,6 +49,15 @@ class CustomerController extends framework {
         $data=$customer->viewCustomer($username);
         $this->view('customer/view',$data);     
     }
+    public function getCustomerName(){
+        include_once ('./MVC/model/CustomerModel.php');
+        $customer=new CustomerModel();
+       $username=isset($_SESSION['ss_user_token'])? $_SESSION['ss_user_token']['username']: "";
+        $res=$customer->getCustomerName($username);
+       
+        return $res;
+    }
+
     public function deleteCustomer(){
         $username=$_GET['p'];
         echo $username;

@@ -20,21 +20,33 @@
     <div class="wrapper">
       <div id="index_title"><h1>Các sản phẩm</h1></div>
       <div class="list_product">
-      <?php foreach($data as $products): ?>
-        <div>
-         
-          <div id="product">
-            <div  class="image_product"><a href="#"><img class="image_product" src="<?php echo $products['img']; ?>"></a></div>
-            <div class="name_product"><a href="#"><h3 class="name_product"><?php echo $products['name'] ?></h3></a></div>
-            <div><h5 class="price_product"><?php echo $products['price']; ?></h5></div>
-            <div class="detail_add">
-              <div class="detail_product"><a href="http://localhost/BTLWEB/MVC/view/customer/productdetail.php">Chi tiết</a></div>
-              <div class="add_to_cart"><a href="#">Mua</a></div>
-            </div>
+     
+        <?php foreach ($data as $products) : ?>
+          <div>
+
+            <form action="?c=PlaceOrderController&m=addProductToCard&p=<?php echo $products['id'] ;?>" method="post">
+              <div id="product">
+
+                <div class="image_product"><a href="#"><img class="image_product" src="<?php echo $products['img']; ?>"></a></div>
+                <div class="name_product"><a href="#">
+                    <h3 class="name_product"><?php echo $products['name'] ?></h3>
+                  </a></div>
+                <div>
+                  <h5 class="price_product">Giá: <?php echo $products['price'] ?></h5>
+                </div>
+                <div class="detail_add">
+                  <div>Số Lượng: <input type="number" name="qty" min="1" max="99" value="1"></div>
+                  <div class="detail_product"><a href="http://localhost/WEB/?c=ProductController&m=viewProduct&p=<?php echo $products['id'] ?>">Chi tiết</a></div>
+                  <div> <button type="submit" >Add to cart </button></div>
+                </div>
+
+              </div>
+              </form>
+            
           </div>
-         
-        </div>
-        <?php endforeach ; ?>
+        <?php endforeach; ?>
+    
+       
       </div>
     </div> 
   <div> 
