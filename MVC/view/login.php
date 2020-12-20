@@ -50,7 +50,7 @@
 
         <main id="login-main">
             <div id="login-container">
-                <div class="login-form">
+                <div class="login-form" style="margin-top: 150px;">
                     <form action="?c=AccountController&m=checkLogin" method="POST">
                         <h1>
                             Đăng nhập vào website

@@ -12,7 +12,7 @@
 <b>Warning</b>:  Undefined variable $listSupplier in <b>C:\xampp\htdocs\WEB\MVC\view\components\header.php</b> on line <b>11</b><br />
 <br />
 <b>Warning</b>:  foreach() argument must be of type array|object, null given in <b>C:\xampp\htdocs\WEB\MVC\view\components\header.php</b> on line <b>11</b><br />
- -->
+ <--></-->
                     </div>
                 </li>
                 <li><a href="">Giới Thiệu</a></li>
