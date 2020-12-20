@@ -413,13 +413,7 @@ table{
  	margin-right: 3px; 
  }
 
- 
-.login-main {
-    background-color: #dddddd;
-    min-height: 300px;
-    padding: 7.5px 15px;
-}
-.login-container {
+ .login-container {
     width: 100%;
     max-width: 1200px;
     margin-left: auto;
@@ -434,35 +428,23 @@ table{
     border: 2px dotted #cccccc;
     border-radius: 10px;
 }
+
 .login-form h1 {
     color: #009999;
     font-size: 20px;
     margin-bottom: 30px;
 }
-.login-input-box {
+
+.form-group {
     margin-bottom: 10px;
 }
-.login-input-box input {
+.form-group input {
     padding-top: 7px;
     padding-bottom: 7px;
     width: 100%;
     border: 1px solid #cccccc;
     outline: none;
 }
-.login-btn-box {
-    text-align: right;
-    margin-top: 30px;
-}
-.login-btn-box button {
-    padding: 7.5px 15px;
-    border-radius: 2px;
-    background-color: #009999;
-    color: #ffffff;
-    border: none;
-    outline: none;
-}
-.login-btn-box a span {
-    color: cadetblue;
-    text-decoration: underline;
-    margin-right: 15px;
+.form-group a {
+	color: #444;
 }
