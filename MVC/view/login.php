@@ -51,18 +51,33 @@
         <main id="login-main">
             <div id="login-container">
                 <div class="login-form" style="margin-top: 150px;">
-                    <form action="?c=AccountController&m=checkLogin" method="POST">
+                    <script language="javascript">
+                        function validateLogin(){
+                            if( document.Login.username.value == "" ) {
+                                alert( "Bạn cần nhập tên đăng nhập" );
+                                document.Login.username.focus() ;
+                                return false;
+                            }
+                            if( document.Login.password.value == "" ) {
+                                alert( "Bạn cần nhập mật khẩu" );
+                                document.Login.password.focus() ;
+                                return false;
+                            }
+                            return( true );
+
+                        }
+                    </script>
+                    <form name = "Login" action="?c=AccountController&m=checkLogin" method="POST" onsubmit = "return validateLogin();" >
                         <h1>
                             Đăng nhập vào website
                         </h1>
                         <div class="form-group">
-                            <input type="text" name="username" class="form-control"  value="">
-                            <div class="error"></div>
+                            <input name="username" type="text" placeholder="username"  />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="password" class="form-control"  value="">
-                            <div class="error"></div>
+                            <input name="password" type="password" placeholder="password"/>
                         </div>
+
                         <div class="form-group">
                             <a href="http://localhost/WEB/?c=AccountController&m=viewSignUpForm">
                                 <span>
