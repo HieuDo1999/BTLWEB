@@ -31,7 +31,7 @@ ul {
     padding-inline-start: 40px;
     
 }
-.list_header li {
+/*.list_header li {
 	display:inline-flex;
 	background: #222222;
 	padding: 5px;
@@ -46,17 +46,34 @@ ul {
 }
 .list_header a{
 	color:#ffffff;
+}*/
+.list_header ul li{
+	list-style: none;
+	float: left;
+}
+
+.list_header ul li a {
+	text-decoration: none;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	color: #FFF;
+	padding: 0px 10px 0px 10px;
+	border-right: 1px solid #333;
 }
 
 #re_lo{
 	display: inline-flex;
 	width: 20%;
-	margin: auto;
-	padding:0;
 	float: right;
+	margin: auto;
+	margin-right: 0px;
 }
 #re_lo a{
-	color: #ffffff
+	padding: 0px 10px 0px 10px;
+	color: #ffffff;
+	display: block;
+	border-left: 1px solid #777;
 }
 
 
@@ -391,7 +408,7 @@ table{
  }
  .updateproduct div,span{
  	display: block;
- 	width: 100%;
+ 	text-align: right;
  	padding: 5px;
  	margin: auto;
  }

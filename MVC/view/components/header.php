@@ -20,9 +20,9 @@
             </ul>
          </div>       
                                      <div id="re_lo">
-                    <span><a href="?c=AccountController&amp;m=viewSignUpForm">Đăng ký</a></span>
+                    <a href="?c=AccountController&amp;m=viewSignUpForm">Đăng ký</a>
                     
-                    <span><a href="http://localhost/WEB/?c=AccountController&amp;m=login">Đăng nhập</a></span>
+                    <a href="http://localhost/WEB/?c=AccountController&amp;m=login">Đăng nhập</a>
                 </div>
                  
 
