@@ -39,10 +39,11 @@
 							 foreach($data as $products): ?>
 					    	<tr class="list_item">
 					    		<td>
+					    			<div id="productName">
 								<a href="http://localhost/WEB/?c=ProductController&m=viewProduct&p=<?php echo $products['product_id']?>">
 									<img src="<?php echo $products['img'] ;?>"    />
 									</a>
-					    			<div><h2><?php echo $products['product_name']; ?></h2></div>
+					    			<h2><?php echo $products['product_name']; ?></h2></div>
 					    		</td>
 					    		<td>
 					    			<input type="number" name="soluong" value="<?php echo $products['quantity'] ?>" min="0" max="99" >

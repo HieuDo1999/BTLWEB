@@ -3,36 +3,29 @@
     <div class="menu_header">
          <div class="list_header">
              <ul>
-                <li><a href="http://localhost/WEB/?c=AccountController&m=home"><i class="fas fa-home"></i>
+                <li><a href="http://localhost/WEB/?c=AccountController&amp;m=home"><i class="fas fa-home"></i>
                 Trang Chủ</a></li>
                 <li>
                     <a href="#">Loại Sản Phẩm</a>
                     <div class="list_navigation">
-                        <!-- <?php foreach ($listSupplier as $key => $value): ?>
-                            <a href="#" class="item_navigation"><?php echo $value->supplier_name ?></a>
-                        <?php endforeach ?> -->
+                        <!-- <br />
+<b>Warning</b>:  Undefined variable $listSupplier in <b>C:\xampp\htdocs\WEB\MVC\view\components\header.php</b> on line <b>11</b><br />
+<br />
+<b>Warning</b>:  foreach() argument must be of type array|object, null given in <b>C:\xampp\htdocs\WEB\MVC\view\components\header.php</b> on line <b>11</b><br />
+ -->
                     </div>
                 </li>
                 <li><a href="">Giới Thiệu</a></li>
                 <li><a href="">Liên Hệ</a></li>
             </ul>
          </div>       
-        <?php  $cus=(isset($_SESSION['ss_user_token']) && $_SESSION['ss_user_token']['level'] == 1) ? 
-        $_SESSION['ss_user_token']['username'] : ""; ?>
-            <?php if (!$cus): ?>
-                 <div id="re_lo">
-                    <span><a href="?c=AccountController&m=viewSignUpForm">Đăng ký</a></span>
+                                     <div id="re_lo">
+                    <span><a href="?c=AccountController&amp;m=viewSignUpForm">Đăng ký</a></span>
                     
-                    <span><a href="http://localhost/WEB/?c=AccountController&m=login">Đăng nhập</a></span>
+                    <span><a href="http://localhost/WEB/?c=AccountController&amp;m=login">Đăng nhập</a></span>
                 </div>
-                <?php else: ?>
-                    <div id="re_lo"><span><a href="?c=AccountController&m=logout">Đăng Xuất</a></span></div>
-            <?php endif ?> 
-            <div >
-               <div class="cart"><a href="http://localhost/WEB/?c=PlaceOrderController&m=viewCart">
-                   <i class="fas fa-shopping-cart "></i>
-               </a></div>
-            </div> 
+                 
+
         </div>
         
     
@@ -40,15 +33,26 @@
         <div id="img"><img id="logo" src="http://localhost/WEB/MVC/public/image/logobanh.png"></div>
         <div id="logoheader">Chức Đào Bakery </div>
         <div class="search">
-            <form action="?c=ProductController&m=viewProductByName" method="POST">
-                 <input  placeholder="tên sản phẩm"  id="text_search" type="text" name="product_name">
+            <form action="?c=ProductController&amp;m=viewProductByName" method="POST" style="
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1px;
+    margin-right: auto;
+">
+                 <input placeholder="tên sản phẩm" id="text_search" type="text" name="product_name">
                 <input id="submit_search" type="submit" name="" value="Tìm kiếm ">
                 
             </form> 
            
-        </div>           
+        </div>  
+        <div style="width: 10%;display:flex;margin-left: auto;">               
+            <div class="cart">
+                <a href="http://localhost/WEB/?c=PlaceOrderController&amp;m=viewCart">
+                <i class="fas fa-shopping-cart" style="font-size: 50px;"></i>
+                </a>
+           </div>
+        </div>         
         
     </div>
     
 </div>
-        
